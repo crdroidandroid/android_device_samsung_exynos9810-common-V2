@@ -183,9 +183,11 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/media/media_codecs_performance_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_c2.xml \
     $(COMMON_PATH)/configs/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
 
+ifeq ($(TARGET_USES_LINEAGE_HALS),true)
 # Livedisplay
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service.samsung-exynos
+endif
 
 # Memtrack
 PRODUCT_PACKAGES += \
@@ -369,9 +371,11 @@ PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl \
     android.hardware.thermal@1.0-service
 
+ifeq ($(TARGET_USES_LINEAGE_HALS),true)
 # Touch
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.exynos9810
+endif
 
 # USB
 PRODUCT_PACKAGES += \

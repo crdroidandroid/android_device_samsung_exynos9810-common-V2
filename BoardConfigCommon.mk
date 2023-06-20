@@ -17,6 +17,8 @@ COMMON_PATH := device/samsung/exynos9810-common
 
 BUILD_BROKEN_DUP_RULES := true
 
+TARGET_USES_LINEAGE_HALS ?= true
+
 ## Include path
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
@@ -147,7 +149,11 @@ ENABLE_VENDOR_RIL_SERVICE := true
 
 # Sepolicy
 BOARD_SEPOLICY_TEE_FLAVOR := mobicore
+
+ifeq ($(TARGET_USES_LINEAGE_HALS),true)
 include device/custom/sepolicy/exynos/sepolicy.mk
+endif
+
 include device/samsung_slsi/sepolicy/sepolicy.mk
 
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
