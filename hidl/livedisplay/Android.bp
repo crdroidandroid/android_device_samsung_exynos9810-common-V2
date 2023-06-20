@@ -43,6 +43,7 @@ cc_binary {
 cc_binary {
     name: "vendor.lineage.livedisplay@2.0-service.samsung-exynos",
     init_rc: ["vendor.lineage.livedisplay@2.0-service.samsung-exynos.rc"],
+    vintf_fragments: ["vendor.lineage.livedisplay@2.0-service.samsung-exynos.xml"],
     defaults: ["livedisplay_samsung_exynos_defaults"],
     vendor: true,
 }
