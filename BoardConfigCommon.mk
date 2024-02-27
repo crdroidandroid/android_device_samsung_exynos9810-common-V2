@@ -146,7 +146,7 @@ ENABLE_VENDOR_RIL_SERVICE := true
 BOARD_SEPOLICY_TEE_FLAVOR := mobicore
 
 ifeq ($(TARGET_USES_LINEAGE_HALS),true)
-include device/custom/sepolicy/exynos/sepolicy.mk
+include device/lineage/sepolicy/exynos/sepolicy.mk
 endif
 
 include device/samsung_slsi/sepolicy/sepolicy.mk
